@@ -1,0 +1,39 @@
+<body>
+<div class="container">
+    <h1 style="font-size: 40px; color: aliceblue;">SELECT HOTELS</h1>
+    
+    
+    <!-- <div ng-app="myApp" ng-controller="costCtrl">
+
+        <p>Price = {{hot.price}}</p>
+        
+        </div> -->
+    <ng-container *ngFor="let hot of hotel">
+        
+        <div class="course-container">
+            <div class="course-card">
+                <div>
+                    <img [src]="hot.image" style="width:420px; height:200px;">
+                </div>
+                <div class="course-name"><h3 ><b>{{hot.hotelName}}</b></h3></div>
+<!--                 <div class="course-description"><p>{{hot.description.slice(0, 80)}}...</p></div>
+ -->                <div class="details">
+                    <div class="course-type" [ngStyle]="{color: hot.className === 'Free' ? 'red' : 'red'}"><b>CLASS:{{hot.className}}</b></div>
+                    <div class="course-price" [ngStyle]="{color: hot.className === 'Free' ? 'red' : 'green'}"><h6><b>REVIEWS:{{hot.starRating}}</b></h6> 
+                   <div class="course-price" [ngStyle]="{color: hot.className === 'Free' ? 'red' : 'blue'}"><h6><b>ROOM:{{hot.roomType}}</b></h6> 
+                    <div class="course-price" [ngStyle]="{color: hot.className === 'Free' ? 'red' : 'black'}"><strong><b>PRICE:${{hot.price}}/Night</b></strong></div></div></div>
+                    <!-- <div class="course-price" [ngStyle]="{color: hot.className === 'Free' ? 'red' : 'black'}"><h6><b>Facility</b>{{hot.price}}</h6></div> -->
+                 
+               
+                <div class="course-buttons">
+                    <button class="btn btn-show" routerLink="/hoteldetails/{{hot.hotelCode}}" ><b>BOOK NOW</b></button>
+                    <!-- <a [routerLink]="['/hot', hot['hotId'], hot['title']]" style="background-color: red; color: aliceblue;" >BOOK NOW</a> -->
+                </div> </div>
+            </div>
+        </div> 
+    </ng-container>
+</div>
+</body>
+
+
+

@@ -1,0 +1,41 @@
+
+<head>
+    <title>Booking Details</title>
+</head>
+ 
+<body>
+ 
+    <div id="heading">
+          <h2>Hotel Summary</h2>
+    </div>
+    <div id="maincontent">
+        <div class="summary-container-middle">
+            <h4><p><b>Hotel Name:</b><strong  *ngFor="let hot of hotel  ">{{hot.hotelName}}</strong></p></h4>
+            <h4><p><b>City:</b><strong *ngFor="let hot of hotel">{{hot.city}}</strong></p></h4>
+            <h4><p><strong>Checkin:{{checkin}}</strong></p></h4>
+           <h4> <p><strong>Checkout:{{checkout}}</strong></p></h4>
+            <h4><p><strong>Length of stay:{{length}}</strong></p></h4>
+            <h4><p><strong *ngFor="let hot of hotel">Total Amount:{{totalprice}}</strong></p></h4>
+            
+            
+        </div>
+        <hr class="line">
+        <h3> <p><b>Selected Class Type:</b> <strong *ngFor="let hot of hotel">{{hot.className}}</strong></p><br></h3>
+      
+        <p id=totalField> </p>
+      <p id=offerField> </p>
+      
+    </div>
+
+    <!-- <div class="course-buttons">
+        <button class="btn btn-show" routerLink="/summary" ></button>
+        < <a [routerLink]="['/hot', hot['hotId'], hot['title']]" style="background-color: red; color: aliceblue;" >BOOK NOW</a> -->
+    <!-- </div>  --> 
+<div class="course-buttons">
+    <p><input type="submit" routerLink="/summary" value="Continue booking">
+     </p>
+     </div>
+</body>
+ 
+
+

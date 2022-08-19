@@ -1,0 +1,248 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  font-family: Roboto;
+}
+
+.navbar {
+  display: flex;
+  padding: 0.6rem;
+  justify-content: space-between;
+  background-color: #2e2d2e;
+  color: #f3f3f3;
+  overflow: hidden;
+}
+
+.navbar h1 {
+  display: flex;
+  align-items: center;
+}
+
+.navbar ul {
+  display: flex;
+  align-items: center;
+}
+
+.navbar ul li {
+  padding: 1rem;
+}
+
+.navbar ul li a {
+  padding: 1.6rem 1rem;
+  color: #f3f3f3;
+}
+
+.navbar ul li a:hover {
+  background-color: #3d3c3f;
+  color: #f7b67f;
+}
+
+.showcase {
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.showcase:before {
+  content: "";
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://i.imgur.com/2jYcqQW.jpg");
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  opacity: 1;
+  z-index: -1;
+}
+
+.showcase h1 {
+  padding: 1rem;
+  font-size: 3.5rem;
+  color: #f3f3f3;
+  font-weight: bold;
+}
+
+.s-color {
+  color: #f7b680;
+}
+
+.showcase p {
+  padding: 1rem;
+  font-size: 1.4rem;
+  color: #f3f3f3;
+  margin-top: 0.5rem;
+}
+
+.showcase a {
+  margin-top: 1rem;
+  padding: 1rem;
+  font-size: 1.4rem;
+  color: #f3f3f3;
+  background-color: #3d3c3f;
+}
+
+.showcase a:hover {
+  background-color: #f7b67f;
+  color: #3d3c3f;
+}
+
+.hotel-history {
+  display: flex;
+}
+
+.hotel-history > div {
+  padding: 1rem;
+}
+
+.hotel-history .box-1 {
+  background: url("https://images.pexels.com/photos/1838640/pexels-photo-1838640.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  flex: 1;
+}
+
+.hotel-history .box-2 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  background: #3d3c3f;
+  color: #f3f2f3;
+}
+
+.hotel-history .box-2 h1 {
+  padding: 2rem;
+}
+
+.hotel-history .box-2 p {
+  padding: 1rem;
+  line-height: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.hotel-history .box-2 a {
+  background-color: #f3f2f3;
+  color: black;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.hotel-history .box-2 a:hover {
+  background: #f7b680;
+}
+
+.offers-container {
+  display: flex;
+}
+
+.offers-container .offer-1 {
+  background: #f3f3f3;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  padding: 2rem;
+  line-height: 2rem;
+}
+
+.offers-container .offer-1 i {
+  color: #2e2d2e;
+  padding-bottom: 1rem;
+}
+
+.offers-container .offer-1 h1 {
+  color: #2e2d2e;
+  padding-top: 1 rem;
+  padding-bottom: 2rem;
+}
+
+.offers-container .offer-2 {
+  background: #f7c08a;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  padding: 2rem;
+  line-height: 2rem;
+}
+
+.offers-container .offer-2 i {
+  color: #2e2d2e;
+  padding-bottom: 1rem;
+}
+
+.offers-container .offer-2 h1 {
+  color: #2e2d2e;
+  padding-top: 1 rem;
+  padding-bottom: 2rem;
+}
+
+.offers-container .offer-3 {
+  background: #f3f3f3;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  padding: 2rem;
+  line-height: 2rem;
+}
+
+.offers-container .offer-3 i {
+  color: #2e2d2e;
+  padding-bottom: 1rem;
+}
+
+.offers-container .offer-3 h1 {
+  color: #2e2d2e;
+  padding-top: 1 rem;
+  padding-bottom: 2rem;
+}
+
+footer {
+  padding: 3rem;
+  text-align: center;
+  background-color: #2e2d2e;
+  color: #f3f2f3;
+}
+
+@media (max-width: 700px) {
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .offers-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .navbar ul li a {
+    padding: 0.8rem 0.2rem;
+    color: #f3f3f3;
+  }
+
+  .hotel-history {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hotel-history .box-1 {
+    display: none;
+  }
+}

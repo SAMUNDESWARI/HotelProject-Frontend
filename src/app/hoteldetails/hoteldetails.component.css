@@ -1,0 +1,45 @@
+div#maincontent {
+  height: 350px;
+  width: 500px;
+  border: 1px solid #CEE2FA;
+  text-align: center;
+  color: white;
+  font-family: calibri;
+  font-size: 20;
+  padding: 5px;
+  margin-left: 400px;
+}
+div#heading {
+  text-decoration: bold;
+  text-align: center;
+  margin-top: 40px;
+  margin-left: 400px;
+  width: 500px;
+  border: 1px solid  black;
+  text-align: center;
+  color: aliceblue;
+  background-color: #234465;
+  font-family: calibri;
+  font-size: 20;
+  padding: 5px;
+}
+h2 {
+  padding: 0;
+  margin: 0;
+}
+.button {background-color: #4CAF50;}
+input[type="submit"] {
+  font-weight: bold;
+  letter-spacing: 0.06em;
+  background-color: #234465;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 0.4em;
+  padding: 1.2em 3.2em;
+  margin: 1em auto 0 auto;
+  margin-left: 530px;
+  }
+  body{
+    background-image: url('/assets/board.jpeg'); 
+    background-size: 100%;
+ }

@@ -1,0 +1,65 @@
+
+<body>
+    <form [formGroup]="summaryForm">
+       <fieldset>
+          <legend>Enter your Personal Information</legend>
+          <p><!--<strong *ngFor="let cust of Customer">{{cust.custfname}}</strong>  -->
+             <label for="first-name"> First Name</label>
+             <input type="text" id="first-name" formControlName="firstname1"  name="name" placeholder="Enter your First Name "  [value]="firstname"
+             (keyup)="send($event)" />
+             <small *ngIf="firstname1?.invalid && firstname1?.touched" class="text-danger">First Name is Required</small>
+
+          </p>
+          <p>
+             <label for="last-name">Last Name</label>
+             <input type="text" id="last-name" formControlName="lastname1"  name="last-name" placeholder="Enter your First Name" [value]="lastname"
+             (keyup)="send1($event)" />
+             <small *ngIf="lastname1?.invalid && lastname1?.touched" class="text-danger">Last Name is Required</small>
+          </p>
+         
+          <p>
+             <label for="email">Email</label>
+             <input type="email" id="email" formControlName="email" name="email" placeholder="your@email.com" [value]="email" (keyup)="send2($event)" />
+             <small *ngIf="email1?.invalid && email1?.touched" class="text-danger">Email is Required</small>
+             
+            </p>
+        <div class="wpte-radio-field wpte-payment-method-field">
+                                             <label for="" class="wpte-bf-label">
+                                                 Payment
+                                             </label><br>
+                                             <div class="wpte-radio-group">
+                                                 <label for="booking-only">
+                                                     <input id="booking-only" type="radio" name="payment-method"
+                                                         id="">
+                                                     Online
+                                                 </label>
+                                                 
+                                                 <label for="bank-transfer">
+                                                     <input id="bank-transfer" type="radio" name="payment-method"
+                                                         id="">
+                                                     Card
+                                                 </label>
+                                                 <label for="check-payments">
+                                                     <input id="check-payments" type="radio" name="payment-method"
+                                                         id="">
+                                                     UPI
+                                                 </label>
+                                             </div>
+                                         </div>
+             
+          
+          <p id="checkbox">
+             <input type="checkbox" id="agree" name="agree">
+             <label for="agree">Check the box to confirm you've read and agree to our
+                                                 <a href="/aboutus">Terms and Conditions</a> and <a href="">Privacy
+                                                     Policy</a>. </label>
+          </p>
+          <div class="course-buttons">
+          <p>
+             <input type="submit" routerLink="/bookingsuccess" (click)="sendit()"value="Book Now">
+          </p>
+        </div>
+       </fieldset>
+    </form>
+ </body>
+

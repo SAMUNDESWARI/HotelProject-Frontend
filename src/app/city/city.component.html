@@ -1,0 +1,150 @@
+<!-- Checkin Date: <input type="date" id="checkinDate" placeholder="yyyy-mm-dd" /> <br>
+Checkout Date: <input type="date" id="checkoutDate" placeholder="yyyy-mm-dd" /> <br>
+<input id="standard" type="checkbox"> Standard Room: $99.99/day 
+
+<br>
+<input id="deluxe" type="checkbox" > Deluxe Room: $149.99/Day
+<br>
+
+<input id="family" type="checkbox" > Family Suite:  $199.99/Day
+
+<br>
+
+<button onclick="showTotal()"> Book</button>
+
+
+ -->
+<body>
+ <script src="//code.angularjs.org/snapshot/angular.min.js"></script>
+ <div id="booking" class="section">
+     <div class="section-center">
+         <div class="container">
+             <div class="row">
+                 <div class="booking-form">
+                     <div class="form-header">
+                         <h1>Make your reservation</h1>
+                     </div>
+                     <form [formGroup]="loginForm">
+ 
+                         <!-- <div class="form-group">
+                             <input class="form-control" type="dropdown" placeholder="Country, ZIP, city...">
+                             <span class="form-label">Destination</span>
+                             <select class="form-select"   (change)="onselectchange($event)"
+                              optionLabel="name"  [(ngModel)]="selected"  required>
+                              <option [value]=null >Select City</option>
+                         <option  *ngFor="let item of cityList" (value) ="item">{{item.city}}</option> -->
+ 
+                         <!-- </div> -->
+ 
+                         <!-- <div class="mb-3"> -->
+ 
+                         <!-- <label for="city" class="form-label"></label>-->
+                         <div class="mb-3">
+                             <label for="city" class="form-label" style="color:black; font-size: xx-large;">SELECT CITY</label>
+                             <select class="form-select" formControlName="city" (change)="onselectchange($event)" optionLabel="name" (ngModel)="selected">
+                                     <option value=null>Select City</option>
+                                     <option  *ngFor="let item of cityList" (value) ="item">{{item.city}}</option>
+                                      <small *ngIf="city?.invalid && city?.touched" class="text-danger">City is Required</small>
+                                 </select>
+                         </div>
+                        
+ 
+ 
+                         <!-- <input type="text" placeholder="select city" matInput [formControl]="myControl" [matAutocomplete]="auto" formControlName="city" (change)="onchange($event)"> -->
+ 
+                         <!-- <small *ngIf="city.invalid && city.touched" class="text-danger">City is Required</small>
+                         <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                             <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                                 {{option}}
+                             </mat-option>
+                         </mat-autocomplete> -->
+ 
+ 
+                         <!--<div *ngIf="submitted && loginForm.controls.city.errors" class="text-danger">
+                                 <div *ngIf="loginForm.controls.city.errors.required">First Name is required</div>
+                             </div>
+                         </div>-->
+ 
+ 
+ 
+                         <div class="row">
+                             <div class="col-md-6">
+                                 <div class="form-group">
+                                     <input class="form-control" #input min="{{min}}" formControlName="checkIn" type="date" (change)="onchange($event)" required>
+                                     <span class="form-label">Check In</span>
+                                     <small *ngIf="checkIn?.invalid && checkIn?.touched" class="text-danger">Ckeck In Date is Required</small>
+                                 </div>
+                             </div>
+                             <div class="col-md-6">
+                                 <div class="form-group">
+                                     <input class="form-control" formControlName="checkOut" type="date" (change)="onchange2($event)" required>
+                                     <span class="form-label">Check out</span>
+                                     <small *ngIf="checkOut?.invalid && checkOut?.touched" class="text-danger">Check Out Date is Required</small>
+                                 </div>
+                             </div>
+                         </div>
+                         <!-- <div class="row">
+                             <div class="col-md-4">
+                                 <div class="form-group">
+                                     <select class="form-control" formControlName="room" required>
+                                         <option value="" selected hidden>no of rooms</option>
+                                         <option>1</option>
+                                         <option>2</option>
+                                         <option>3</option>
+                                     </select>
+                                     <span class="select-arrow"></span>
+                                     <span class="form-label">Rooms</span>
+                                     <small *ngIf="room?.invalid && room?.touched" class="text-danger">No of Rooms is Required</small>
+                                 </div>
+                             </div>
+                             <div class="col-md-4">
+                                 <div class="form-group">
+                                     <select class="form-control" formControlName="adults" required>
+                                         <option value="" selected hidden>no of adults</option>
+                                         <option>1</option>
+                                         <option>2</option>
+                                         <option>3</option>
+                                     </select>
+                                     <span class="select-arrow"></span>
+                                     <span class="form-label">Adults</span>
+                                     <small *ngIf="adults?.invalid && adults?.touched" class="text-danger">No of adults is Required</small>
+                                 </div>
+                             </div>
+                             <div class="col-md-4">
+                                 <div class="form-group">
+                                     <select class="form-control" required>
+                                         <option value="" selected hidden>no of children</option>
+                                         <option>0</option>
+                                         <option>1</option>
+                                         <option>2</option>
+                                     </select>
+                                     <span class="select-arrow"></span>
+                                     <span class="form-label">Children</span>
+                                 </div>
+                             </div>
+                         </div> -->
+                         <!-- <div class="row">
+                             <div class="col-md-6">
+                                 <div class="form-group">
+                                     <input class="form-control" type="email" placeholder="Enter your Email">
+                                     <span class="form-label">Email</span>
+                                 </div>
+                             </div>
+                             <div class="col-md-6">
+                                 <div class="form-group">
+                                     <input class="form-control" type="tel" placeholder="Enter you Phone">
+                                     <span class="form-label">Phone</span>
+                                 </div>
+                             </div>
+                         </div> -->
+                         <div class="form-btn">
+                             <button class="submit-btn" (click)="click($event)" [disabled]="loginForm.invalid">Search hotels</button>
+                         </div>
+                         </form>
+                         </div>
+                         </div>
+                         </div>
+                         </div>
+                         </div>
+                         </body>
+                        
